@@ -1,0 +1,13 @@
+# ============================================================
+# netlify.toml — Configuração do OAuth proxy para Decap CMS
+# Necessário para autenticação GitHub no GitHub Pages
+# ============================================================
+
+[build]
+  publish = "."
+
+# Redireciona requisições de autenticação para o proxy Netlify
+[[redirects]]
+  from  = "/api/auth"
+  to    = "https://api.netlify.com/auth/done"
+  status = 200
