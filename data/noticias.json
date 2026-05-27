@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "titulo": "Conselho aprova Resolução nº 142/2025 sobre critérios de atendimento social",
+    "resumo": "Em reunião ordinária realizada na Câmara Municipal, o Conselho aprovou por unanimidade novos critérios para atendimento de famílias em vulnerabilidade social.",
+    "categoria": "deliberacao",
+    "data": "2025-07-08",
+    "destaque": true,
+    "imagem": null,
+    "imagem_emoji": "📋"
+  },
+  {
+    "id": 2,
+    "titulo": "Plano Municipal de Habitação 2025–2028 é aprovado pelo Conselho",
+    "resumo": "O plano contempla ações de regularização fundiária, melhorias habitacionais e novas moradias para famílias de baixa renda no município.",
+    "categoria": "deliberacao",
+    "data": "2025-06-22",
+    "destaque": false,
+    "imagem": null,
+    "imagem_emoji": "🏘"
+  },
+  {
+    "id": 3,
+    "titulo": "Parceria com universidade regional para capacitação de conselheiros",
+    "resumo": "Acordo de cooperação técnica prevê cursos de formação continuada em políticas públicas, legislação e gestão participativa.",
+    "categoria": "parceria",
+    "data": "2025-06-15",
+    "destaque": false,
+    "imagem": null,
+    "imagem_emoji": "🤝"
+  },
+  {
+    "id": 4,
+    "titulo": "Jaguarão sedia conferência regional de políticas para a mulher",
+    "resumo": "O evento reuniu representantes de 12 municípios da região para debater avanços no atendimento às mulheres em situação de vulnerabilidade.",
+    "categoria": "evento",
+    "data": "2025-06-03",
+    "destaque": false,
+    "imagem": null,
+    "imagem_emoji": "👩‍👧"
+  },
+  {
+    "id": 5,
+    "titulo": "Reunião ordinária de maio aprova prestação de contas do 1º trimestre",
+    "resumo": "Conselheiros analisaram e aprovaram o relatório financeiro referente ao período janeiro–março de 2025.",
+    "categoria": "reuniao",
+    "data": "2025-05-19",
+    "destaque": false,
+    "imagem": null,
+    "imagem_emoji": "📅"
+  },
+  {
+    "id": 6,
+    "titulo": "5ª Conferência Municipal de Assistência Social debate proteção social",
+    "resumo": "Com ampla participação da sociedade, a conferência elegeu delegados para a etapa estadual e aprovou moções de impacto municipal.",
+    "categoria": "evento",
+    "data": "2025-04-28",
+    "destaque": false,
+    "imagem": null,
+    "imagem_emoji": "🎤"
+  }
+]
