@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://comdicajaguaraors.github.io/portal-cmj/sitemap.xml
