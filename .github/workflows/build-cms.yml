@@ -1,0 +1,55 @@
+name: Build JSON from CMS
+
+# Executa automaticamente sempre que o Decap CMS salvar
+# um arquivo nas pastas de conteúdo (_noticias, _resolucoes, etc.)
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '_noticias/**'
+      - '_resolucoes/**'
+      - '_atas/**'
+      - '_reunioes/**'
+      - '_editais/**'
+      - '_institucional/**'
+      - '_data/**'
+
+  # Permite rodar manualmente pelo painel do GitHub
+  workflow_dispatch:
+
+jobs:
+  build-json:
+    runs-on: ubuntu-latest
+    name: Regenerar arquivos JSON
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Rodar build-data.js
+        run: node build-data.js
+
+      - name: Verificar se há mudanças nos JSONs
+        id: check-changes
+        run: |
+          git diff --quiet data/ || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit e push dos JSONs atualizados
+        if: steps.check-changes.outputs.changed == 'true'
+        run: |
+          git config user.name  "CMJ Bot"
+          git config user.email "bot@conselhojaguarao.rs.gov.br"
+          git add data/
+          git commit -m "🤖 Atualiza JSONs a partir do CMS [skip ci]"
+          git push
