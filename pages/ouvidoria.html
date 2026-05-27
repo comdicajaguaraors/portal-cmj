@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Canal de ouvidoria do Conselho Municipal de Jaguarão/RS — denúncias, sugestões e pedidos LAI.">
+  <meta name="theme-color" content="#071D41">
+  <title>Ouvidoria — Conselho Municipal de Jaguarão/RS</title>
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
+<div id="site-header"></div>
+<nav class="breadcrumb" aria-label="Navegação estrutural">
+  <div class="container"><ol class="breadcrumb-lista"><li><a href="../index.html">Início</a></li><li class="sep">/</li><li class="atual">Ouvidoria</li></ol></div>
+</nav>
+<div class="page-hero">
+  <div class="container"><div class="page-hero-inner"><h1>Ouvidoria</h1><p>Canal oficial de denúncias, sugestões, reclamações e pedidos LAI</p></div></div>
+</div>
+<main id="conteudo-principal">
+
+<section class="section">
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start">
+    <div>
+      <div class="sec-kicker">Canal Oficial</div>
+      <h2 class="sec-titulo">Ouvidoria Municipal</h2>
+      <p style="color:var(--cinza-3);font-size:.93rem;line-height:1.7;margin-bottom:20px">A Ouvidoria do Conselho Municipal é o canal oficial para recebimento de denúncias, reclamações, sugestões, elogios e solicitações de informação (LAI). Todas as manifestações são registradas, analisadas e respondidas.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px">
+        <div style="background:var(--branco);border:1px solid var(--cinza-6);border-radius:var(--r-lg);padding:16px;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-size:1.5rem">🔴</span><div><h4 style="font-size:.9rem;color:var(--azul-1);margin-bottom:4px;font-family:var(--font-body);font-weight:700">Denúncia</h4><p style="font-size:.82rem;color:var(--cinza-3)">Irregularidades, desvios ou má conduta de agentes públicos</p></div>
+        </div>
+        <div style="background:var(--branco);border:1px solid var(--cinza-6);border-radius:var(--r-lg);padding:16px;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-size:1.5rem">🟡</span><div><h4 style="font-size:.9rem;color:var(--azul-1);margin-bottom:4px;font-family:var(--font-body);font-weight:700">Reclamação</h4><p style="font-size:.82rem;color:var(--cinza-3)">Serviços inadequados, descumprimento de normas ou prazos</p></div>
+        </div>
+        <div style="background:var(--branco);border:1px solid var(--cinza-6);border-radius:var(--r-lg);padding:16px;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-size:1.5rem">🟢</span><div><h4 style="font-size:.9rem;color:var(--azul-1);margin-bottom:4px;font-family:var(--font-body);font-weight:700">Sugestão / Elogio</h4><p style="font-size:.82rem;color:var(--cinza-3)">Ideias de melhoria ou reconhecimento de bom atendimento</p></div>
+        </div>
+        <div style="background:var(--branco);border:1px solid var(--cinza-6);border-radius:var(--r-lg);padding:16px;display:flex;gap:14px;align-items:flex-start">
+          <span style="font-size:1.5rem">🔵</span><div><h4 style="font-size:.9rem;color:var(--azul-1);margin-bottom:4px;font-family:var(--font-body);font-weight:700">Pedido LAI</h4><p style="font-size:.82rem;color:var(--cinza-3)">Solicitação de informações públicas (Lei de Acesso à Informação)</p></div>
+        </div>
+      </div>
+      <div style="background:var(--azul-6);border-radius:var(--r-lg);padding:16px;font-size:.83rem;color:var(--cinza-3)">
+        ⏱ <strong>Prazo de resposta:</strong> Até 20 dias úteis (LAI) ou 30 dias (demais). Manifestações anônimas são aceitas mas podem limitar o retorno.
+      </div>
+    </div>
+    <div class="form-contato">
+      <h3>Registrar Manifestação</h3>
+      <p class="form-sub">Todas as manifestações são sigilosas e recebem número de protocolo.</p>
+      <form id="formOuvidoria" novalidate>
+        <div class="form-grupo"><label>Tipo de Manifestação *</label>
+          <select name="tipo" required><option value="">Selecione…</option><option>Denúncia</option><option>Reclamação</option><option>Sugestão</option><option>Elogio</option><option>Pedido LAI — Acesso à Informação</option><option>Outros</option></select>
+        </div>
+        <div class="form-grupo"><label>Nome (opcional)</label><input type="text" name="nome" placeholder="Manifestação pode ser anônima"></div>
+        <div class="form-grupo"><label>E-mail (para receber protocolo)</label><input type="email" name="email" placeholder="seu@email.com"></div>
+        <div class="form-grupo"><label>Descrição detalhada *</label><textarea name="descricao" placeholder="Descreva sua manifestação com o máximo de detalhes…" required style="min-height:140px"></textarea></div>
+        <button type="submit" class="btn btn-primary" style="width:100%">📬 Enviar Manifestação</button>
+      </form>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+  window.CMJData = { base: '../' };
+  CMJ.init();
+</script>
+</body></html>
