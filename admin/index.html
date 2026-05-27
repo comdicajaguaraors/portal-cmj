@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Painel Administrativo — CMJ Jaguarão/RS</title>
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+
+  <!--
+    DECAP CMS (antigo Netlify CMS)
+    Versão: 3.x — CDN oficial
+    Documentação: https://decapcms.org/docs
+  -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <style>
+    /* ── Tela de carregamento enquanto o CMS inicializa ── */
+    #cms-loading {
+      position: fixed;
+      inset: 0;
+      background: #071326;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      font-family: 'Inter', system-ui, sans-serif;
+      gap: 24px;
+      transition: opacity .5s ease;
+    }
+    #cms-loading.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .loading-logo {
+      width: 70px; height: 70px;
+      background: linear-gradient(145deg, #0C1F45, #1351B4);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 8px 32px rgba(19,81,180,.4);
+      border: 2px solid rgba(200,150,26,.3);
+    }
+    .loading-title {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-align: center;
+    }
+    .loading-sub {
+      color: rgba(255,255,255,.5);
+      font-size: .85rem;
+      text-align: center;
+    }
+    .loading-bar-wrap {
+      width: 220px;
+      height: 3px;
+      background: rgba(255,255,255,.1);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .loading-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #1351B4, #C8961A);
+      border-radius: 99px;
+      animation: loadingAnim 1.8s ease-in-out infinite;
+    }
+    @keyframes loadingAnim {
+      0%   { width: 0%;   margin-left: 0; }
+      50%  { width: 70%;  margin-left: 15%; }
+      100% { width: 0%;   margin-left: 100%; }
+    }
+
+    /* ── Customizações visuais do Decap CMS ── */
+    :root {
+      --cms-color-primary: #1351B4 !important;
+      --cms-color-primary-hover: #155BCB !important;
+    }
+
+    /* Ocultar a tela de loading quando o CMS carregar */
+    #nc-root ~ #cms-loading,
+    [data-testid] ~ #cms-loading {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div id="site-header" hidden aria-hidden="true"></div>
+<a href="#cms-loading" class="skip-link" style="z-index:100001">Ir para o painel</a>
+
+  <!-- Tela de carregamento -->
+  <div id="cms-loading">
+    <div class="loading-logo">⚖</div>
+    <div class="loading-title">CMJ — Painel Administrativo</div>
+    <div class="loading-sub">Conselho Municipal de Jaguarão/RS</div>
+    <div class="loading-bar-wrap">
+      <div class="loading-bar"></div>
+    </div>
+    <div class="loading-sub" id="loading-msg">Carregando editor visual…</div>
+  </div>
+
+  <script>
+    // Ocultar tela de loading após o CMS inicializar
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const el = document.getElementById('cms-loading');
+        if (el) {
+          el.classList.add('hide');
+          setTimeout(() => el.remove(), 600);
+        }
+      }, 2000);
+    });
+
+    // Mensagens de loading progressivas
+    const msgs = [
+      'Carregando editor visual…',
+      'Conectando ao GitHub…',
+      'Preparando coleções…',
+      'Quase pronto…'
+    ];
+    let mi = 0;
+    const msgEl = document.getElementById('loading-msg');
+    setInterval(function() {
+      mi = (mi + 1) % msgs.length;
+      if (msgEl) msgEl.textContent = msgs[mi];
+    }, 1500);
+  </script>
+
+<div id="site-footer" hidden aria-hidden="true"></div>
+</body>
+</html>
