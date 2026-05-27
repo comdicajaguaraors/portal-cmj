@@ -1,0 +1,42 @@
+[
+  {
+    "id": 3,
+    "tipo": "ordinaria",
+    "titulo": "Reunião Ordinária — Agosto/2025",
+    "data": "2025-08-19",
+    "hora": "19:00",
+    "local": "Câmara Municipal de Jaguarão",
+    "pauta": "A definir — convocação enviada com 10 dias de antecedência.",
+    "status": "agendada"
+  },
+  {
+    "id": 2,
+    "tipo": "extraordinaria",
+    "titulo": "Reunião Extraordinária",
+    "data": "2025-07-22",
+    "hora": "18:30",
+    "local": "Câmara Municipal de Jaguarão",
+    "pauta": "Análise de edital de seleção de entidades para convênios municipais.",
+    "status": "agendada"
+  },
+  {
+    "id": 1,
+    "tipo": "ordinaria",
+    "titulo": "Reunião Ordinária — Julho/2025",
+    "data": "2025-07-15",
+    "hora": "19:00",
+    "local": "Câmara Municipal de Jaguarão",
+    "pauta": "Deliberação sobre projetos habitacionais e aprovação de contas do 1.º semestre.",
+    "status": "agendada"
+  },
+  {
+    "id": 4,
+    "tipo": "ordinaria",
+    "titulo": "Reunião Ordinária — Junho/2025",
+    "data": "2025-06-17",
+    "hora": "19:00",
+    "local": "Câmara Municipal de Jaguarão",
+    "pauta": "Aprovação do Plano Municipal de Habitação e deliberações diversas.",
+    "status": "realizada"
+  }
+]
