@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página não encontrada — Conselho Municipal de Jaguarão/RS">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0C1F45">
+  <title>Página não encontrada — CMJ Jaguarão/RS</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .erro-wrap {
+      min-height: 72vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: var(--sp-16) var(--sp-6);
+    }
+    .erro-inner { max-width: 500px; }
+    .erro-num {
+      font-family: var(--font-display);
+      font-size: clamp(6rem, 20vw, 10rem);
+      font-weight: 900; color: var(--gov-2);
+      opacity: .08; line-height: 1;
+      margin-bottom: calc(-1 * var(--sp-10));
+    }
+    .erro-icon { font-size: 3.5rem; margin-bottom: var(--sp-5); }
+    .erro-inner h1 {
+      font-size: var(--t-4xl); color: var(--gov-2);
+      margin-bottom: var(--sp-3);
+    }
+    .erro-inner p {
+      font-size: var(--t-base); color: var(--n-500);
+      margin-bottom: var(--sp-8); line-height: 1.65;
+    }
+    .erro-actions { display: flex; gap: var(--sp-3); justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+<a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
+<div id="site-header"></div>
+
+<main id="conteudo-principal">
+  <div class="erro-wrap">
+    <div class="erro-inner">
+      <div class="erro-num" aria-hidden="true">404</div>
+      <div class="erro-icon" aria-hidden="true">🏛</div>
+      <h1>Página não encontrada</h1>
+      <p>
+        A página que você procura pode ter sido removida, renomeada
+        ou o endereço foi digitado incorretamente.
+      </p>
+      <div class="erro-actions">
+        <a href="index.html" class="btn btn-primary">← Voltar à Página Inicial</a>
+        <a href="pages/contato.html" class="btn btn-outline">Fale Conosco</a>
+      </div>
+      <p style="margin-top:var(--sp-8);font-size:var(--t-xs);color:var(--n-300)">
+        Se você acredita que isto é um erro, por favor
+        <a href="pages/contato.html">entre em contato</a>.
+      </p>
+    </div>
+  </div>
+</main>
+
+<div id="site-footer"></div>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  window.CMJData = { base: './' };
+  CMJ.init();
+</script>
+</body>
+</html>
