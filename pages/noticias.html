@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Notícias, comunicados e informes do Conselho Municipal de Jaguarão/RS.">
+  <meta name="theme-color" content="#071D41">
+  <title>Notícias — Conselho Municipal de Jaguarão/RS</title>
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+    .f-btn{padding:7px 18px;border-radius:var(--r-full);border:1.5px solid var(--cinza-5);background:var(--branco);color:var(--cinza-2);font-size:.82rem;font-weight:600;cursor:pointer;transition:var(--tr);font-family:var(--font-body)}
+    .f-btn:hover,.f-btn.ativo{background:var(--azul-3);color:var(--branco);border-color:var(--azul-3)}
+    .busca-noticias{margin-bottom:20px;max-width:520px;display:flex}
+    .busca-noticias input{flex:1;padding:10px 14px;border:1.5px solid var(--cinza-5);border-right:none;border-radius:var(--r-md) 0 0 var(--r-md);font-family:var(--font-body);font-size:.88rem;background:var(--cinza-7)}
+    .busca-noticias input:focus{outline:none;border-color:var(--azul-3);background:var(--branco)}
+    .busca-noticias button{padding:10px 16px;background:var(--azul-3);color:var(--branco);border:none;border-radius:0 var(--r-md) var(--r-md) 0;cursor:pointer}
+  </style>
+</head>
+<body>
+<a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
+<div id="site-header"></div>
+<nav class="breadcrumb" aria-label="Navegação estrutural">
+  <div class="container"><ol class="breadcrumb-lista"><li><a href="../index.html">Início</a></li><li class="sep">/</li><li class="atual">Notícias</li></ol></div>
+</nav>
+<div class="page-hero">
+  <div class="container"><div class="page-hero-inner">
+    <h1>Notícias</h1>
+    <p>Comunicados, informes e novidades do Conselho Municipal de Jaguarão/RS</p>
+  </div></div>
+</div>
+<main id="conteudo-principal">
+<section class="section">
+  <div class="container">
+    <div class="search-wrap">
+      <input type="search" id="buscaNoticia" placeholder="Buscar notícia…" aria-label="Buscar notícias">
+      <button aria-label="Buscar">🔍</button>
+    </div>
+    <div class="filter-bar" role="group" aria-label="Filtrar por categoria">
+      <button class="filter-btn active" onclick="filtrarNot('todas',this)">Todas</button>
+      <button class="filter-btn" onclick="filtrarNot('deliberacao',this)">Deliberações</button>
+      <button class="filter-btn" onclick="filtrarNot('reuniao',this)">Reuniões</button>
+      <button class="filter-btn" onclick="filtrarNot('evento',this)">Eventos</button>
+      <button class="filter-btn" onclick="filtrarNot('parceria',this)">Parcerias</button>
+    </div>
+    <div id="not-grid" class="loading-grid">
+      <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line w60"></div><div class="skeleton-line w80" style="height:18px;margin:6px 0"></div><div class="skeleton-line"></div></div></div>
+      <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line w60"></div><div class="skeleton-line w80" style="height:18px;margin:6px 0"></div><div class="skeleton-line"></div></div></div>
+      <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-body"><div class="skeleton-line w60"></div><div class="skeleton-line w80" style="height:18px;margin:6px 0"></div><div class="skeleton-line"></div></div></div>
+    </div>
+    <p id="not-total" style="margin-top:16px;font-size:.82rem;color:var(--cinza-4)"></p>
+  </div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+CMJ.init();
+let todasNot = [];
+let catAtiva = 'todas';
+
+CMJData.carregar('noticias.json').then(data => {
+  if (!data) return;
+  todasNot = data;
+  renderNot(data);
+});
+
+function renderNot(lista) {
+  const grid = document.getElementById('not-grid');
+  const total = document.getElementById('not-total');
+  if(total) total.textContent = lista.length ? `${lista.length} notícia(s) encontrada(s)` : '';
+  if (!lista.length) {
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--cinza-4);">Nenhuma notícia encontrada.</div>';
+    return;
+  }
+  grid.className = 'loading-grid';
+  setTimeout(() => grid.className = 'noticias-grid', 50);
+  grid.innerHTML = lista.map(n => `
+    <article class="noticia-card" data-categoria="${n.categoria}">
+      <div class="noticia-card-img">
+        <div class="emoji-bg" aria-hidden="true">${n.imagem_emoji || '📰'}</div>
+        <span class="data-pill">📅 ${CMJData.formatarData(n.data)}</span>
+      </div>
+      <div class="noticia-card-body">
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <span class="tag ${CMJData.corCategoria(n.categoria)}">${CMJData.labelCategoria(n.categoria)}</span>
+          ${n.destaque ? '<span class="tag tag-ouro">⭐ Destaque</span>' : ''}
+        </div>
+        <h3><a href="#">${n.titulo}</a></h3>
+        <p>${n.resumo}</p>
+      </div>
+      <div class="noticia-card-footer">
+        <span style="font-size:.76rem;color:var(--cinza-4)">${CMJData.formatarData(n.data)}</span>
+        <a href="#" class="ler-mais">Ler mais →</a>
+      </div>
+    </article>`).join('');
+}
+
+function filtrarNot(cat, btn) {
+  document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('ativo'));
+  btn.classList.add('ativo');
+  catAtiva = cat;
+  aplicarFiltros();
+}
+
+function aplicarFiltros() {
+  const busca = (document.getElementById('buscaNoticia').value || '').toLowerCase();
+  const filtrado = todasNot.filter(n => {
+    const matchCat = catAtiva === 'todas' || n.categoria === catAtiva;
+    const matchBusca = !busca || n.titulo.toLowerCase().includes(busca) || n.resumo.toLowerCase().includes(busca);
+    return matchCat && matchBusca;
+  });
+  renderNot(filtrado);
+}
+
+document.getElementById('buscaNoticia')?.addEventListener('input', aplicarFiltros);
+</script>
+</body></html>
