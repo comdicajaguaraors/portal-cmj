@@ -1,0 +1,11 @@
+{
+  "name": "Conselho Municipal de Jaguarão/RS",
+  "short_name": "CMJ",
+  "description": "Portal Institucional do Conselho Municipal de Jaguarão/RS",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#071D41",
+  "theme_color": "#071D41",
+  "lang": "pt-BR",
+  "icons": [{"src": "assets/images/favicon.svg","sizes": "any","type": "image/svg+xml"}]
+}
