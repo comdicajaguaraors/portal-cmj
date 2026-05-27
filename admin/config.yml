@@ -1,0 +1,594 @@
+# ============================================================
+# DECAP CMS — config.yml
+# Portal Conselho Municipal de Jaguarão/RS
+# ============================================================
+
+backend:
+  name: github
+  repo: comdicajaguaraors/portal-cmj
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+# Pasta onde imagens e PDFs são salvos
+media_folder: "uploads/imagens"
+public_folder: "/uploads/imagens"
+
+# Idioma do painel
+locale: "pt"
+
+# ── CONFIGURAÇÕES DO PAINEL ─────────────────────────────────
+site_url: https://comdicajaguaraors.github.io/portal-cmj
+
+# Publicar sem necessidade de aprovação (direto no branch main)
+publish_mode: simple
+
+# ── COLLECTIONS ────────────────────────────────────────────
+collections:
+
+  # ── 1. NOTÍCIAS ──────────────────────────────────────────
+  - name: "noticias"
+    label: "📰 Notícias"
+    label_singular: "Notícia"
+    folder: "_noticias"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    media_folder: "/uploads/imagens"
+    public_folder: "/uploads/imagens"
+    sortable_fields: ["data", "titulo", "categoria"]
+    view_filters:
+      - label: "Destaques"
+        field: destaque
+        pattern: true
+      - label: "Deliberações"
+        field: categoria
+        pattern: "deliberacao"
+      - label: "Reuniões"
+        field: categoria
+        pattern: "reuniao"
+      - label: "Eventos"
+        field: categoria
+        pattern: "evento"
+    summary: "{{titulo}} — {{data}}"
+    fields:
+      - label: "Título"
+        name: "titulo"
+        widget: "string"
+        hint: "Título completo da notícia"
+
+      - label: "Resumo"
+        name: "resumo"
+        widget: "text"
+        hint: "Texto curto que aparece no card da notícia (2-3 linhas)"
+
+      - label: "Conteúdo Completo"
+        name: "body"
+        widget: "markdown"
+        required: false
+        hint: "Texto completo da notícia (opcional — para futuras páginas de detalhe)"
+
+      - label: "Categoria"
+        name: "categoria"
+        widget: "select"
+        options:
+          - { label: "Deliberação", value: "deliberacao" }
+          - { label: "Reunião", value: "reuniao" }
+          - { label: "Evento", value: "evento" }
+          - { label: "Parceria", value: "parceria" }
+          - { label: "Comunicado", value: "comunicado" }
+        default: "comunicado"
+
+      - label: "Data de Publicação"
+        name: "data"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+        hint: "Data em que a notícia foi/será publicada"
+
+      - label: "Marcar como Destaque"
+        name: "destaque"
+        widget: "boolean"
+        default: false
+        hint: "Notícias em destaque aparecem em tamanho maior na página inicial"
+
+      - label: "Imagem"
+        name: "imagem"
+        widget: "image"
+        required: false
+        hint: "Imagem principal da notícia (opcional)"
+        media_folder: "/uploads/imagens"
+        public_folder: "/uploads/imagens"
+
+      - label: "Ícone (emoji)"
+        name: "imagem_emoji"
+        widget: "string"
+        required: false
+        default: "📋"
+        hint: "Emoji exibido quando não há imagem (ex: 📋 🏛 📄 📢)"
+
+      - label: "ID (não alterar)"
+        name: "id"
+        widget: "number"
+        required: false
+        hint: "Gerado automaticamente — não precisa preencher"
+
+
+  # ── 2. RESOLUÇÕES ─────────────────────────────────────────
+  - name: "resolucoes"
+    label: "📋 Resoluções"
+    label_singular: "Resolução"
+    folder: "_resolucoes"
+    create: true
+    slug: "resolucao-{{numero_slug}}-{{year}}"
+    sortable_fields: ["data", "numero", "situacao"]
+    view_filters:
+      - label: "Vigentes"
+        field: situacao
+        pattern: "vigente"
+      - label: "2025"
+        field: ano
+        pattern: "2025"
+      - label: "2024"
+        field: ano
+        pattern: "2024"
+    summary: "Nº {{numero}} — {{ementa}}"
+    fields:
+      - label: "Número da Resolução"
+        name: "numero"
+        widget: "string"
+        hint: "Ex: 143/2025"
+        pattern:
+          - "^\\d+/\\d{4}$"
+          - "Use o formato: número/ano (ex: 143/2025)"
+
+      - label: "Slug do número (sem barra)"
+        name: "numero_slug"
+        widget: "string"
+        hint: "Ex: 143-2025 (usado para nomear o arquivo)"
+
+      - label: "Ementa (Assunto)"
+        name: "ementa"
+        widget: "text"
+        hint: "Descrição completa do assunto da resolução"
+
+      - label: "Data de Aprovação"
+        name: "data"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+
+      - label: "Ano"
+        name: "ano"
+        widget: "number"
+        default: 2025
+        value_type: "int"
+        hint: "Ano da resolução (para filtros)"
+
+      - label: "Situação"
+        name: "situacao"
+        widget: "select"
+        options:
+          - { label: "Vigente", value: "vigente" }
+          - { label: "Histórico", value: "historico" }
+          - { label: "Revogada", value: "revogada" }
+        default: "vigente"
+
+      - label: "Arquivo PDF"
+        name: "arquivo_pdf"
+        widget: "file"
+        required: false
+        media_folder: "/uploads/pdfs"
+        public_folder: "/uploads/pdfs"
+        hint: "Faça upload do PDF da resolução aqui"
+        allow_multiple: false
+
+      - label: "Caminho do arquivo (se já existir)"
+        name: "arquivo"
+        widget: "string"
+        required: false
+        hint: "Ex: documentos/resolucoes/resolucao-142-2025.pdf (preencha se o PDF já está na pasta documentos)"
+
+      - label: "Conteúdo / Observações"
+        name: "body"
+        widget: "markdown"
+        required: false
+        hint: "Observações internas (não aparecem no portal)"
+
+
+  # ── 3. ATAS ───────────────────────────────────────────────
+  - name: "atas"
+    label: "📄 Atas"
+    label_singular: "Ata"
+    folder: "_atas"
+    create: true
+    slug: "ata-{{numero}}-{{year}}"
+    sortable_fields: ["data", "numero", "tipo"]
+    view_filters:
+      - label: "Ordinárias"
+        field: tipo
+        pattern: "ordinaria"
+      - label: "Extraordinárias"
+        field: tipo
+        pattern: "extraordinaria"
+    summary: "Ata nº {{numero}}/{{year}} — {{data}}"
+    fields:
+      - label: "Número da Ata"
+        name: "numero"
+        widget: "string"
+        hint: "Ex: 07 (número sequencial dentro do ano)"
+
+      - label: "Título"
+        name: "titulo"
+        widget: "string"
+        hint: "Ex: Ata da Reunião Ordinária nº 07/2025 — Julho de 2025"
+
+      - label: "Data da Reunião"
+        name: "data"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+
+      - label: "Tipo de Reunião"
+        name: "tipo"
+        widget: "select"
+        options:
+          - { label: "Reunião Ordinária", value: "ordinaria" }
+          - { label: "Reunião Extraordinária", value: "extraordinaria" }
+        default: "ordinaria"
+
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Publicada", value: "publicada" }
+          - { label: "Aguardando Aprovação", value: "pendente" }
+        default: "publicada"
+
+      - label: "Arquivo PDF da Ata"
+        name: "arquivo_pdf"
+        widget: "file"
+        required: false
+        media_folder: "/uploads/pdfs"
+        public_folder: "/uploads/pdfs"
+        hint: "Faça upload do PDF da ata aqui"
+
+      - label: "Resumo da pauta"
+        name: "resumo"
+        widget: "text"
+        required: false
+        hint: "Breve descrição dos assuntos tratados"
+
+      - label: "Conteúdo completo"
+        name: "body"
+        widget: "markdown"
+        required: false
+
+
+  # ── 4. REUNIÕES / CALENDÁRIO ──────────────────────────────
+  - name: "reunioes"
+    label: "📅 Calendário"
+    label_singular: "Reunião"
+    folder: "_reunioes"
+    create: true
+    slug: "reuniao-{{year}}-{{month}}-{{day}}"
+    sortable_fields: ["data", "tipo", "status"]
+    view_filters:
+      - label: "Agendadas"
+        field: status
+        pattern: "agendada"
+      - label: "Realizadas"
+        field: status
+        pattern: "realizada"
+      - label: "Ordinárias"
+        field: tipo
+        pattern: "ordinaria"
+    summary: "{{titulo}} — {{data}}"
+    fields:
+      - label: "Título"
+        name: "titulo"
+        widget: "string"
+        hint: "Ex: Reunião Ordinária — Agosto/2025"
+
+      - label: "Data"
+        name: "data"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+
+      - label: "Horário"
+        name: "hora"
+        widget: "string"
+        default: "19:00"
+        hint: "Ex: 19:00"
+
+      - label: "Tipo"
+        name: "tipo"
+        widget: "select"
+        options:
+          - { label: "Ordinária", value: "ordinaria" }
+          - { label: "Extraordinária", value: "extraordinaria" }
+        default: "ordinaria"
+
+      - label: "Local"
+        name: "local"
+        widget: "string"
+        default: "Câmara Municipal de Jaguarão"
+
+      - label: "Pauta"
+        name: "pauta"
+        widget: "text"
+        hint: "Descrição dos assuntos a serem tratados"
+
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Agendada", value: "agendada" }
+          - { label: "Realizada", value: "realizada" }
+          - { label: "Cancelada", value: "cancelada" }
+        default: "agendada"
+
+      - label: "Link da Ata (após realização)"
+        name: "link_ata"
+        widget: "string"
+        required: false
+        hint: "Preencha após a reunião ser realizada"
+
+
+  # ── 5. EDITAIS ────────────────────────────────────────────
+  - name: "editais"
+    label: "📢 Editais"
+    label_singular: "Edital"
+    folder: "_editais"
+    create: true
+    slug: "edital-{{numero_slug}}-{{year}}"
+    sortable_fields: ["data_publicacao", "numero", "status"]
+    view_filters:
+      - label: "Abertos"
+        field: status
+        pattern: "aberto"
+      - label: "Encerrados"
+        field: status
+        pattern: "encerrado"
+    summary: "Edital nº {{numero}} — {{titulo}}"
+    fields:
+      - label: "Número do Edital"
+        name: "numero"
+        widget: "string"
+        hint: "Ex: 001/2025"
+
+      - label: "Slug do número"
+        name: "numero_slug"
+        widget: "string"
+        hint: "Ex: 001-2025"
+
+      - label: "Título"
+        name: "titulo"
+        widget: "string"
+        hint: "Ex: Chamamento Público para Entidades de Assistência Social"
+
+      - label: "Objeto"
+        name: "objeto"
+        widget: "text"
+        hint: "Descrição resumida do objeto do edital"
+
+      - label: "Data de Publicação"
+        name: "data_publicacao"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+
+      - label: "Prazo Final de Inscrição"
+        name: "prazo"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+        required: false
+
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Aberto", value: "aberto" }
+          - { label: "Encerrado", value: "encerrado" }
+          - { label: "Suspenso", value: "suspenso" }
+        default: "aberto"
+
+      - label: "Arquivo PDF do Edital"
+        name: "arquivo_pdf"
+        widget: "file"
+        required: false
+        media_folder: "/uploads/pdfs"
+        public_folder: "/uploads/pdfs"
+        hint: "Faça upload do PDF do edital"
+
+      - label: "Informações adicionais"
+        name: "body"
+        widget: "markdown"
+        required: false
+        hint: "Instruções, cronograma ou outras informações"
+
+
+  # ── 6. TEXTOS INSTITUCIONAIS ──────────────────────────────
+  - name: "institucional"
+    label: "🏛 Institucional"
+    label_singular: "Texto Institucional"
+    folder: "_institucional"
+    create: false
+    delete: false
+    summary: "{{titulo}}"
+    fields:
+      - label: "Título da Seção"
+        name: "titulo"
+        widget: "string"
+
+      - label: "Conteúdo"
+        name: "body"
+        widget: "markdown"
+        hint: "Texto principal da seção institucional"
+
+      - label: "Última atualização"
+        name: "data_atualizacao"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD/MM/YYYY"
+        time_format: false
+        required: false
+
+
+  # ── 7. CONFIGURAÇÕES DO SITE ──────────────────────────────
+  - name: "config"
+    label: "⚙ Configurações"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "geral"
+        label: "Configurações Gerais"
+        file: "_data/config.json"
+        fields:
+          - label: "Nome do Conselho"
+            name: "nome_conselho"
+            widget: "string"
+            default: "Conselho Municipal de Jaguarão/RS"
+
+          - label: "Sigla"
+            name: "sigla"
+            widget: "string"
+            default: "CMJ"
+
+          - label: "Cidade"
+            name: "cidade"
+            widget: "string"
+            default: "Jaguarão/RS"
+
+          - label: "Telefone"
+            name: "telefone"
+            widget: "string"
+            hint: "Ex: (53) 3261-1234"
+
+          - label: "E-mail"
+            name: "email"
+            widget: "string"
+
+          - label: "Endereço"
+            name: "endereco"
+            widget: "text"
+
+          - label: "Horário de Atendimento"
+            name: "horario"
+            widget: "string"
+            default: "Segunda a Sexta: 8h às 12h / 13h30 às 17h30"
+
+          - label: "Link Facebook"
+            name: "facebook"
+            widget: "string"
+            required: false
+
+          - label: "Link Instagram"
+            name: "instagram"
+            widget: "string"
+            required: false
+
+          - label: "Link YouTube"
+            name: "youtube"
+            widget: "string"
+            required: false
+
+          - label: "Mensagem de aviso no topo (deixe vazio para ocultar)"
+            name: "aviso_topo"
+            widget: "string"
+            required: false
+            hint: "Ex: Próxima reunião: 15/07 às 19h — Câmara Municipal"
+
+      - name: "conselheiros"
+        label: "Conselheiros"
+        file: "_data/conselheiros.json"
+        fields:
+          - label: "Conselheiros"
+            name: "conselheiros"
+            widget: "list"
+            summary: "{{fields.nome}} — {{fields.cargo}}"
+            fields:
+              - label: "Nome completo"
+                name: "nome"
+                widget: "string"
+
+              - label: "Cargo / Representação"
+                name: "cargo"
+                widget: "string"
+                hint: "Ex: Secretaria Municipal de Saúde"
+
+              - label: "Segmento"
+                name: "segmento"
+                widget: "select"
+                options:
+                  - { label: "Poder Público", value: "poder-publico" }
+                  - { label: "Sociedade Civil", value: "sociedade-civil" }
+
+              - label: "Tipo"
+                name: "tipo"
+                widget: "select"
+                options:
+                  - { label: "Titular", value: "titular" }
+                  - { label: "Suplente", value: "suplente" }
+
+              - label: "E-mail (opcional)"
+                name: "email"
+                widget: "string"
+                required: false
+
+              - label: "Iniciais (para avatar)"
+                name: "iniciais"
+                widget: "string"
+                hint: "Ex: MF (2 letras)"
+                required: false
+
+      - name: "mesa_diretora"
+        label: "Mesa Diretora"
+        file: "_data/mesa_diretora.json"
+        fields:
+          - label: "Membros da Mesa Diretora"
+            name: "membros"
+            widget: "list"
+            summary: "{{fields.nome}} — {{fields.cargo}}"
+            fields:
+              - label: "Nome completo"
+                name: "nome"
+                widget: "string"
+
+              - label: "Cargo na Mesa"
+                name: "cargo"
+                widget: "select"
+                options:
+                  - { label: "Presidente", value: "Presidente" }
+                  - { label: "1.º Vice-Presidente", value: "1. Vice-Presidente" }
+                  - { label: "2.ª Vice-Presidente", value: "2. Vice-Presidente" }
+                  - { label: "1.º Secretário", value: "1. Secretário" }
+                  - { label: "2.ª Secretária", value: "2. Secretária" }
+
+              - label: "Segmento"
+                name: "segmento"
+                widget: "string"
+                hint: "Ex: Sociedade Civil — Entidades de Assistência"
+
+              - label: "Descrição"
+                name: "descricao"
+                widget: "text"
+                required: false
+
+              - label: "E-mail"
+                name: "email"
+                widget: "string"
+                required: false
+
+              - label: "Gestão"
+                name: "gestao"
+                widget: "string"
+                default: "2024–2026"
