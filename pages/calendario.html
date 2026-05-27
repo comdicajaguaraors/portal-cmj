@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calendário oficial de reuniões do Conselho Municipal de Jaguarão/RS 2025.">
+  <meta name="theme-color" content="#071D41">
+  <title>Calendário de Reuniões — Conselho Municipal de Jaguarão/RS</title>
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
+<div id="site-header"></div>
+<nav class="breadcrumb" aria-label="Navegação estrutural">
+  <div class="container"><ol class="breadcrumb-lista"><li><a href="../index.html">Início</a></li><li class="sep">/</li><li class="atual">Calendário</li></ol></div>
+</nav>
+<div class="page-hero">
+  <div class="container"><div class="page-hero-inner"><h1>Calendário de Reuniões</h1><p>Agenda oficial de reuniões ordinárias e extraordinárias — 2025</p></div></div>
+</div>
+<main id="conteudo-principal">
+
+<section class="section">
+<div class="container">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+    <div>
+      <div class="sec-kicker">Agenda</div>
+      <h2 class="sec-titulo">Calendário de Reuniões 2025</h2>
+      <p class="sec-subtitulo">As reuniões ordinárias ocorrem mensalmente, na 3.ª terça-feira, a partir das 19h.</p>
+      <div id="cal-reunioes" style="display:flex;flex-direction:column;gap:12px;margin-top:24px">
+        <div class="meeting-item"><div class="meeting-cal"><div class="meeting-mon">Jul</div><div class="meeting-day">15</div></div><div class="meeting-info"><span class="badge-reuniao badge-ordinaria">Ordinária</span><h4>Reunião Ordinária — Julho/2025</h4><p>Deliberação sobre projetos habitacionais e aprovação de contas do 1.º semestre.</p><span class="meeting-where">📍 Câmara Municipal · 19h00</span></div></div>
+        <div class="meeting-item"><div class="meeting-cal"><div class="meeting-mon" style="background:var(--ouro-2)">Jul</div><div class="meeting-day">22</div></div><div class="meeting-info"><span class="badge-reuniao badge-extraordinaria">Extraordinária</span><h4>Reunião Extraordinária</h4><p>Análise de edital de seleção de entidades para convênios municipais.</p><span class="meeting-where">📍 Câmara Municipal · 18h30</span></div></div>
+        <div class="meeting-item"><div class="meeting-cal"><div class="meeting-mon">Ago</div><div class="meeting-day">19</div></div><div class="meeting-info"><span class="badge-reuniao badge-ordinaria">Ordinária</span><h4>Reunião Ordinária — Agosto/2025</h4><p>Pauta a definir — convocação enviada com 10 dias de antecedência.</p><span class="meeting-where">📍 Câmara Municipal · 19h00</span></div></div>
+        <div class="meeting-item" style="opacity:.6"><div class="meeting-cal"><div class="meeting-mon" style="background:var(--cinza-4)">Jun</div><div class="meeting-day">17</div></div><div class="meeting-info"><span class="badge-reuniao badge-realizada">Realizada</span><h4>Reunião Ordinária — Junho/2025</h4><p>Aprovação do Plano Municipal de Habitação e deliberações diversas.</p><span class="meeting-where">📍 Câmara Municipal · 19h00 · <a href="atas.html" style="color:var(--azul-3)">Ver ata</a></span></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="sec-kicker">Calendário Mensal</div>
+      <h2 class="sec-titulo" id="cal-mes-titulo">Julho 2025</h2>
+      <div id="cal-widget" style="background:var(--branco);border:1px solid var(--cinza-6);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sombra-sm)">
+        <div style="background:var(--azul-1);padding:14px 16px;display:flex;justify-content:space-between;align-items:center">
+          <button onclick="mudarMes(-1)" style="background:rgba(255,255,255,.1);border:none;color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:.9rem">‹</button>
+          <span id="cal-header" style="color:#fff;font-weight:700;font-family:var(--font-display)"></span>
+          <button onclick="mudarMes(1)" style="background:rgba(255,255,255,.1);border:none;color:#fff;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:.9rem">›</button>
+        </div>
+        <div id="cal-grid" style="padding:16px"></div>
+        <div style="padding:12px 16px;border-top:1px solid var(--cinza-6);display:flex;gap:16px;font-size:.75rem;color:var(--cinza-3)">
+          <span>🔵 Reunião ordinária</span>
+          <span>🟡 Reunião extraordinária</span>
+          <span style="background:var(--azul-5);padding:2px 6px;border-radius:4px;color:var(--azul-3);font-weight:700">Hoje</span>
+        </div>
+      </div>
+      <div style="margin-top:16px;background:var(--cinza-7);border-radius:var(--r-lg);padding:16px;font-size:.84rem;color:var(--cinza-3)">
+        📌 <strong>Local padrão das reuniões:</strong> Câmara Municipal de Jaguarão, Rua XV de Novembro, s/nº — Plenário
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>CMJ.init();
+const reunioesFixas = { 7: [{dia:15,tipo:'ord'},{dia:22,tipo:'ext'}], 8: [{dia:19,tipo:'ord'}], 9: [{dia:16,tipo:'ord'}], 10: [{dia:21,tipo:'ord'}] };
+let calMes = new Date().getMonth();
+let calAno = new Date().getFullYear();
+const mesesNome = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+const diasSem = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+function renderCal() {
+  const hoje = new Date();
+  const r = reunioesFixas[calMes+1] || [];
+  const rdias = r.map(x=>x.dia);
+  const rext = r.filter(x=>x.tipo==='ext').map(x=>x.dia);
+  document.getElementById('cal-header').textContent = mesesNome[calMes] + ' ' + calAno;
+  const primDia = new Date(calAno, calMes, 1).getDay();
+  const total = new Date(calAno, calMes+1, 0).getDate();
+  let html = '<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center">';
+  diasSem.forEach(d => { html += `<div style="font-size:.7rem;font-weight:700;color:var(--cinza-4);padding:6px 0">${d}</div>`; });
+  for(let i=0;i<primDia;i++) html += '<div></div>';
+  for(let d=1;d<=total;d++) {
+    const isHoje = d===hoje.getDate() && calMes===hoje.getMonth() && calAno===hoje.getFullYear();
+    const isReuniao = rdias.includes(d);
+    const isExt = rext.includes(d);
+    let bg = isHoje ? 'var(--azul-3)' : isReuniao ? (isExt ? 'var(--ouro-3)' : 'var(--azul-5)') : 'transparent';
+    let color = isHoje ? '#fff' : isReuniao ? (isExt ? 'var(--azul-1)' : 'var(--azul-2)') : 'var(--cinza-2)';
+    let fw = (isHoje||isReuniao) ? '700' : '400';
+    html += `<div title="${isReuniao?(isExt?'Reunião Extraordinária':'Reunião Ordinária'):''}" style="font-size:.82rem;padding:7px 2px;border-radius:6px;background:${bg};color:${color};font-weight:${fw};cursor:${isReuniao?'pointer':'default'}">${d}</div>`;
+  }
+  html += '</div>';
+  document.getElementById('cal-grid').innerHTML = html;
+}
+function mudarMes(d) { calMes+=d; if(calMes>11){calMes=0;calAno++;}if(calMes<0){calMes=11;calAno--;} renderCal(); }
+renderCal();
+</script>
+</body></html>
