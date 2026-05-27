@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal oficial do Conselho Municipal de Jaguarão/RS — transparência, resoluções, atas e participação social.">
+  <meta name="keywords" content="Conselho Municipal, Jaguarão, Rio Grande do Sul, políticas públicas, transparência">
+  <meta name="author" content="Conselho Municipal de Jaguarão/RS">
+  <meta property="og:title" content="Conselho Municipal de Jaguarão/RS">
+  <meta property="og:description" content="Portal oficial do Conselho Municipal de Jaguarão/RS — transparência e participação social.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0C1F45">
+  <title>Conselho Municipal de Jaguarão/RS — Portal Institucional</title>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
+
+<div id="site-header"></div>
+
+<main id="conteudo-principal">
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="hero" aria-label="Boas-vindas ao portal institucional">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-eyebrow">Portal Institucional Oficial</div>
+          <h1 class="hero-title">
+            Conselho Municipal<br>de <em>Jaguarão/RS</em>
+          </h1>
+          <p class="hero-desc">
+            Órgão colegiado deliberativo comprometido com a transparência,
+            a participação social e a formulação de políticas públicas
+            para o município de Jaguarão.
+          </p>
+          <div class="hero-actions">
+            <a href="pages/quem-somos.html" class="btn btn-white">
+              Conheça o Conselho
+            </a>
+            <a href="pages/resolucoes.html" class="btn btn-ghost">
+              Ver Resoluções →
+            </a>
+          </div>
+        </div>
+        <div class="hero-stats" aria-label="Números do Conselho">
+          <div class="stat-card">
+            <span class="stat-n">18</span>
+            <div class="stat-l">Conselheiros</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-n">142</span>
+            <div class="stat-l">Resoluções</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-n">2001</span>
+            <div class="stat-l">Fundado em</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-n">100%</span>
+            <div class="stat-l">Transparente</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ACESSO RÁPIDO ─────────────────────────────────── -->
+  <nav class="quick-access" aria-label="Acesso rápido aos serviços">
+    <div class="quick-inner">
+      <a href="pages/resolucoes.html" class="quick-item">
+        <div class="quick-icon" aria-hidden="true">📋</div>Resoluções
+      </a>
+      <a href="pages/atas.html" class="quick-item">
+        <div class="quick-icon" aria-hidden="true">📄</div>Atas
+      </a>
+      <a href="pages/editais.html" class="quick-item">
+        <div class="quick-icon" aria-hidden="true">📢</div>Editais
+      </a>
+      <a href="pages/calendario.html" class="quick-item">
+        <div class="quick-icon" aria-hidden="true">📅</div>Calendário
+      </a>
+      <a href="pages/transparencia.html" class="quick-item">
+        <div class="quick-icon" aria-hidden="true">🔍</div>Transparência
+      </a>
+      <a href="pages/legislacao.html" class="quick-item">
+        <div class="quick-icon" aria-hidden="true">⚖</div>Legislação
+      </a>
+      <a href="pages/ouvidoria.html" class="quick-item">
+        <div class="quick-icon" aria-hidden="true">📬</div>Ouvidoria
+      </a>
+      <a href="pages/contato.html" class="quick-item">
+        <div class="quick-icon" aria-hidden="true">📞</div>Contato
+      </a>
+    </div>
+  </nav>
+
+  <!-- ── NOTÍCIAS ──────────────────────────────────────── -->
+  <section class="section" aria-labelledby="titulo-noticias">
+    <div class="container">
+      <div class="sec-hd-row">
+        <div class="sec-hd" style="margin-bottom:0">
+          <div class="sec-eyebrow">Comunicação</div>
+          <h2 class="sec-title" id="titulo-noticias">Últimas Notícias</h2>
+          <p class="sec-sub">Acompanhe os comunicados e deliberações do Conselho</p>
+        </div>
+        <a href="pages/noticias.html" class="see-all">Ver todas →</a>
+      </div>
+
+      <!-- Notícia destaque — preenchida via JSON -->
+      <div id="noticia-destaque" class="news-featured" aria-live="polite">
+        <div class="news-feat-img" aria-hidden="true" style="font-size:5rem;opacity:.15">📰</div>
+        <div class="news-feat-body">
+          <div class="skeleton-wrap" style="grid-template-columns:1fr">
+            <div class="sk" style="border-radius:var(--r-lg)">
+              <div class="sk-body">
+                <div class="sk-line w50"></div>
+                <div class="sk-line w90" style="height:20px;margin:8px 0"></div>
+                <div class="sk-line w70"></div>
+                <div class="sk-line w50"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid de notícias — preenchido via JSON -->
+      <div id="noticias-grid" class="skeleton-wrap" aria-live="polite">
+        <div class="sk"><div class="sk-img"></div><div class="sk-body"><div class="sk-line w50"></div><div class="sk-line w90" style="height:18px;margin:6px 0"></div><div class="sk-line w70"></div></div></div>
+        <div class="sk"><div class="sk-img"></div><div class="sk-body"><div class="sk-line w50"></div><div class="sk-line w90" style="height:18px;margin:6px 0"></div><div class="sk-line w70"></div></div></div>
+        <div class="sk"><div class="sk-img"></div><div class="sk-body"><div class="sk-line w50"></div><div class="sk-line w90" style="height:18px;margin:6px 0"></div><div class="sk-line w70"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESOLUÇÕES + REUNIÕES ─────────────────────────── -->
+  <section class="section bg-gray" aria-label="Documentos e Agenda">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-12);align-items:start">
+
+        <div>
+          <div class="sec-hd">
+            <div class="sec-eyebrow">Documentos</div>
+            <h2 class="sec-title">Resoluções Recentes</h2>
+            <p class="sec-sub">Últimas deliberações aprovadas pelo Conselho</p>
+          </div>
+          <!-- preenchido via JSON -->
+          <div id="resolucoes-lista" aria-live="polite">
+            <div class="sk" style="height:62px;border-radius:var(--r-lg);margin-bottom:8px"></div>
+            <div class="sk" style="height:62px;border-radius:var(--r-lg);margin-bottom:8px"></div>
+            <div class="sk" style="height:62px;border-radius:var(--r-lg)"></div>
+          </div>
+          <div style="margin-top:var(--sp-5)">
+            <a href="pages/resolucoes.html" class="see-all">Ver todas as resoluções →</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="sec-hd">
+            <div class="sec-eyebrow">Agenda</div>
+            <h2 class="sec-title">Próximas Reuniões</h2>
+            <p class="sec-sub">Calendário de reuniões ordinárias e extraordinárias</p>
+          </div>
+          <!-- preenchido via JSON -->
+          <div id="reunioes-lista" aria-live="polite">
+            <div class="sk" style="height:88px;border-radius:var(--r-lg);margin-bottom:12px"></div>
+            <div class="sk" style="height:88px;border-radius:var(--r-lg)"></div>
+          </div>
+          <div style="margin-top:var(--sp-5)">
+            <a href="pages/calendario.html" class="see-all">Ver calendário completo →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRANSPARÊNCIA ─────────────────────────────────── -->
+  <section class="section" aria-labelledby="titulo-transp">
+    <div class="container">
+      <div class="sec-hd" style="text-align:center">
+        <div class="sec-eyebrow" style="justify-content:center">Acesso à Informação</div>
+        <h2 class="sec-title" id="titulo-transp" style="text-align:center">Portal da Transparência</h2>
+        <p class="sec-sub" style="text-align:center;margin:0 auto">
+          Acesse livremente todas as informações públicas do Conselho Municipal
+        </p>
+      </div>
+      <div class="transp-grid">
+        <a href="pages/resolucoes.html" class="transp-card">
+          <div class="transp-icon" aria-hidden="true">📋</div>
+          <h4>Resoluções e Deliberações</h4>
+          <p>Acesse todas as resoluções aprovadas pelo Conselho desde sua fundação.</p>
+        </a>
+        <a href="pages/atas.html" class="transp-card">
+          <div class="transp-icon" aria-hidden="true">📄</div>
+          <h4>Atas das Reuniões</h4>
+          <p>Registros de todas as reuniões ordinárias e extraordinárias.</p>
+        </a>
+        <a href="pages/editais.html" class="transp-card">
+          <div class="transp-icon" aria-hidden="true">📢</div>
+          <h4>Editais e Chamamentos</h4>
+          <p>Editais de seleção, chamamentos públicos e convênios vigentes.</p>
+        </a>
+        <a href="pages/transparencia.html" class="transp-card">
+          <div class="transp-icon" aria-hidden="true">💰</div>
+          <h4>Prestação de Contas</h4>
+          <p>Relatórios financeiros, balanços e demonstrativos contábeis.</p>
+        </a>
+        <a href="pages/legislacao.html" class="transp-card">
+          <div class="transp-icon" aria-hidden="true">⚖</div>
+          <h4>Base Legal</h4>
+          <p>Leis municipais, decretos e normas que regem o Conselho.</p>
+        </a>
+        <a href="pages/ouvidoria.html" class="transp-card">
+          <div class="transp-icon" aria-hidden="true">📬</div>
+          <h4>Ouvidoria / LAI</h4>
+          <p>Canal para denúncias, sugestões e pedidos de acesso à informação.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────────────────────── -->
+  <div class="cta-strip">
+    <div class="container">
+      <h2>Participe do Conselho Municipal</h2>
+      <p>A sociedade civil tem voz ativa nas decisões que afetam o município.
+         Saiba como participar das reuniões e contribuir com Jaguarão.</p>
+      <div class="cta-actions">
+        <a href="pages/quem-somos.html" class="btn btn-white">Saiba como participar</a>
+        <a href="pages/contato.html"    class="btn btn-ghost">Entre em contato</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTATO RÁPIDO ────────────────────────────────── -->
+  <section class="section bg-gray" aria-labelledby="titulo-contato">
+    <div class="container">
+      <div class="sec-hd">
+        <div class="sec-eyebrow">Fale Conosco</div>
+        <h2 class="sec-title" id="titulo-contato">Entre em Contato</h2>
+        <p class="sec-sub">Estamos à disposição para atender sua solicitação</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-data">
+          <div class="contact-datum">
+            <span class="ico" aria-hidden="true">📍</span>
+            <div>
+              <strong>Endereço</strong>
+              <span>Câmara Municipal de Jaguarão<br>
+                    Rua XV de Novembro, s/nº — Centro<br>
+                    Jaguarão/RS — CEP 96300-000</span>
+            </div>
+          </div>
+          <div class="contact-datum">
+            <span class="ico" aria-hidden="true">📞</span>
+            <div>
+              <strong>Telefone</strong>
+              <span><a href="tel:555332610000">(53) 3261-XXXX</a></span>
+            </div>
+          </div>
+          <div class="contact-datum">
+            <span class="ico" aria-hidden="true">✉</span>
+            <div>
+              <strong>E-mail</strong>
+              <span><a href="mailto:conselho@jaguarao.rs.gov.br">conselho@jaguarao.rs.gov.br</a></span>
+            </div>
+          </div>
+          <div class="contact-datum">
+            <span class="ico" aria-hidden="true">🕐</span>
+            <div>
+              <strong>Horário de Atendimento</strong>
+              <span>Segunda a Sexta<br>8h às 12h / 13h30 às 17h30</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-box">
+          <h3>Enviar mensagem</h3>
+          <p class="form-sub">Respondemos em até 2 dias úteis.</p>
+          <form id="formContato" novalidate autocomplete="on">
+            <div class="form-group">
+              <label for="nome">Nome completo <span aria-hidden="true">*</span></label>
+              <input type="text" id="nome" name="nome"
+                     placeholder="Seu nome completo"
+                     autocomplete="name" required>
+              <span class="field-err" role="alert"></span>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">E-mail <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email"
+                       placeholder="seu@email.com"
+                       autocomplete="email" required>
+                <span class="field-err" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone"
+                       placeholder="(53) 9XXXX-XXXX"
+                       autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="assunto">Assunto</label>
+              <select id="assunto" name="assunto">
+                <option value="">Selecione…</option>
+                <option>Informações Gerais</option>
+                <option>Resoluções e Deliberações</option>
+                <option>Participação Social</option>
+                <option>Imprensa</option>
+                <option>Outros</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem <span aria-hidden="true">*</span></label>
+              <textarea id="mensagem" name="mensagem"
+                        placeholder="Escreva sua mensagem…"
+                        required></textarea>
+              <span class="field-err" role="alert"></span>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="lgpd" name="lgpd" required>
+              <label for="lgpd">
+                Concordo com o uso dos meus dados para fins de comunicação,
+                conforme a <a href="pages/transparencia.html">Política de Privacidade</a> (LGPD).
+              </label>
+            </div>
+            <span class="field-err" role="alert" id="lgpd-err"></span>
+            <button type="submit" class="btn btn-primary btn-block">
+              ✉ Enviar Mensagem
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="assets/js/components.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  // Inicializa CMJData.base antes do main.js usá-lo no cookie banner
+  window.CMJData = { base: './' };
+  CMJ.init();
+</script>
+</body>
+</html>
