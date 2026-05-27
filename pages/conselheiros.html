@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conselheiros titulares e suplentes do Conselho Municipal de Jaguarão/RS — gestão 2024–2026.">
+  <meta name="theme-color" content="#071D41">
+  <title>Conselheiros — Conselho Municipal de Jaguarão/RS</title>
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+    .f-btn{padding:7px 18px;border-radius:var(--r-full);border:1.5px solid var(--cinza-5);background:var(--branco);color:var(--cinza-2);font-size:.82rem;font-weight:600;cursor:pointer;transition:var(--tr);font-family:var(--font-body)}
+    .f-btn:hover,.f-btn.ativo{background:var(--azul-3);color:var(--branco);border-color:var(--azul-3)}
+    .seg-titulo{font-size:.8rem;font-weight:700;color:var(--cinza-3);text-transform:uppercase;letter-spacing:.1em;padding:16px 0 10px;border-bottom:2px solid var(--cinza-6);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+    .seg-titulo::before{content:'';width:20px;height:2px;background:var(--azul-3)}
+    .conselheiros-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px;margin-bottom:36px}
+    .c-card{background:var(--branco);border-radius:var(--r-xl);padding:22px 16px;text-align:center;border:1px solid var(--cinza-6);transition:var(--tr);box-shadow:var(--sombra-sm)}
+    .c-card:hover{transform:translateY(-3px);box-shadow:var(--sombra-md);border-color:var(--azul-4)}
+    .c-avatar{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,var(--azul-2),var(--azul-3));margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.3rem;font-weight:900;color:rgba(255,255,255,.6)}
+    .c-avatar.verde{background:linear-gradient(135deg,var(--verde-1),var(--verde-2))}
+    .c-avatar.suplente{opacity:.65}
+    .c-card h4{font-size:.87rem;color:var(--azul-1);margin-bottom:4px;font-family:var(--font-body);font-weight:700;line-height:1.3}
+    .c-card .cargo{font-size:.76rem;color:var(--cinza-4);margin-bottom:8px}
+  </style>
+</head>
+<body>
+<a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
+<div id="site-header"></div>
+<nav class="breadcrumb" aria-label="Navegação estrutural">
+  <div class="container"><ol class="breadcrumb-lista"><li><a href="../index.html">Início</a></li><li class="sep">/</li><li class="atual">Conselheiros</li></ol></div>
+</nav>
+<div class="page-hero">
+  <div class="container"><div class="page-hero-inner">
+    <h1>Conselheiros</h1>
+    <p>Titulares e suplentes — Gestão 2024–2026 — Composição paritária: poder público e sociedade civil</p>
+  </div></div>
+</div>
+<main id="conteudo-principal">
+<section class="section">
+  <div class="container">
+    <div class="filter-bar" role="group" aria-label="Filtrar conselheiros">
+      <button class="filter-btn active" data-filtro="todos">Todos (36)</button>
+      <button class="filter-btn" data-filtro="poder-publico">Poder Público</button>
+      <button class="filter-btn" data-filtro="sociedade-civil">Sociedade Civil</button>
+      <button class="filter-btn" data-filtro="titular">Titulares</button>
+      <button class="filter-btn" data-filtro="suplente">Suplentes</button>
+    </div>
+
+    <div class="seg-titulo">🏛 Representantes do Poder Público</div>
+    <div class="conselheiros-grid" id="grid-sociedade-civil">
+      <div class="c-card" data-categoria="poder-publico titular"><div class="c-avatar">MF</div><h4>Maria Ferreira</h4><div class="cargo">Sec. Mun. de Assistência Social</div><span class="tag tag-azul">Titular</span></div>
+      <div class="c-card" data-categoria="poder-publico titular"><div class="c-avatar">JS</div><h4>José da Silva</h4><div class="cargo">Secretaria Municipal de Saúde</div><span class="tag tag-azul">Titular</span></div>
+      <div class="c-card" data-categoria="poder-publico titular"><div class="c-avatar">AL</div><h4>Ana Luiza Campos</h4><div class="cargo">Sec. Municipal de Educação</div><span class="tag tag-azul">Titular</span></div>
+      <div class="c-card" data-categoria="poder-publico titular"><div class="c-avatar">RP</div><h4>Roberto Pereira</h4><div class="cargo">Sec. Municipal de Habitação</div><span class="tag tag-azul">Titular</span></div>
+      <div class="c-card" data-categoria="poder-publico titular"><div class="c-avatar">CM</div><h4>Carla Mendes</h4><div class="cargo">Sec. Mun. de Meio Ambiente</div><span class="tag tag-azul">Titular</span></div>
+      <div class="c-card" data-categoria="poder-publico titular"><div class="c-avatar">PS</div><h4>Paulo Souza</h4><div class="cargo">Sec. Municipal de Finanças</div><span class="tag tag-azul">Titular</span></div>
+      <div class="c-card" data-categoria="poder-publico suplente"><div class="c-avatar suplente">LR</div><h4>Lúcia Ribeiro</h4><div class="cargo">SMAS</div><span class="tag tag-cinza">Suplente</span></div>
+      <div class="c-card" data-categoria="poder-publico suplente"><div class="c-avatar suplente">FN</div><h4>Fernando Nunes</h4><div class="cargo">SMS</div><span class="tag tag-cinza">Suplente</span></div>
+      <div class="c-card" data-categoria="poder-publico suplente"><div class="c-avatar suplente">TA</div><h4>Tânia Almeida</h4><div class="cargo">SME</div><span class="tag tag-cinza">Suplente</span></div>
+    </div>
+
+    <div class="seg-titulo">🤝 Representantes da Sociedade Civil</div>
+    <div class="conselheiros-grid" id="grid-sociedade-civil">
+      <div class="c-card" data-categoria="sociedade-civil titular"><div class="c-avatar verde">MO</div><h4>Maria das Graças Oliveira</h4><div class="cargo">Entidades de Assistência Social</div><span class="tag tag-verde">Titular</span></div>
+      <div class="c-card" data-categoria="sociedade-civil titular"><div class="c-avatar verde">JF</div><h4>Joana Figueiredo</h4><div class="cargo">Associação de Bairros</div><span class="tag tag-verde">Titular</span></div>
+      <div class="c-card" data-categoria="sociedade-civil titular"><div class="c-avatar verde">CR</div><h4>Carlos Rocha</h4><div class="cargo">Sindicatos e Entidades de Classe</div><span class="tag tag-verde">Titular</span></div>
+      <div class="c-card" data-categoria="sociedade-civil titular"><div class="c-avatar verde">BS</div><h4>Beatriz Silveira</h4><div class="cargo">Conselho Tutelar</div><span class="tag tag-verde">Titular</span></div>
+      <div class="c-card" data-categoria="sociedade-civil titular"><div class="c-avatar verde">GC</div><h4>Gilberto Correa</h4><div class="cargo">Org. Religiosas e Filantrópicas</div><span class="tag tag-verde">Titular</span></div>
+      <div class="c-card" data-categoria="sociedade-civil titular"><div class="c-avatar verde">VL</div><h4>Vera Lúcia Pinto</h4><div class="cargo">Movimentos Sociais e Populares</div><span class="tag tag-verde">Titular</span></div>
+      <div class="c-card" data-categoria="sociedade-civil suplente"><div class="c-avatar verde suplente">SM</div><h4>Sandra Melo</h4><div class="cargo">Entidades Assistência</div><span class="tag tag-cinza">Suplente</span></div>
+      <div class="c-card" data-categoria="sociedade-civil suplente"><div class="c-avatar verde suplente">PN</div><h4>Pedro Neto</h4><div class="cargo">Associação de Bairros</div><span class="tag tag-cinza">Suplente</span></div>
+      <div class="c-card" data-categoria="sociedade-civil suplente"><div class="c-avatar verde suplente">IC</div><h4>Ilda Cruz</h4><div class="cargo">Sindicatos</div><span class="tag tag-cinza">Suplente</span></div>
+    </div>
+  </div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+  window.CMJData = { base: '../' };
+  CMJ.init();
+</script>
+</body></html>
