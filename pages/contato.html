@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fale com o Conselho Municipal de Jaguarão/RS — endereço, telefone, e-mail e formulário de contato.">
+  <meta name="theme-color" content="#071D41">
+  <title>Contato — Conselho Municipal de Jaguarão/RS</title>
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
+<div id="site-header"></div>
+<nav class="breadcrumb" aria-label="Navegação estrutural">
+  <div class="container"><ol class="breadcrumb-lista"><li><a href="../index.html">Início</a></li><li class="sep">/</li><li class="atual">Contato</li></ol></div>
+</nav>
+<div class="page-hero">
+  <div class="container"><div class="page-hero-inner"><h1>Fale Conosco</h1><p>Estamos à disposição — endereço, telefone, e-mail e formulário online</p></div></div>
+</div>
+<main id="conteudo-principal">
+
+<section class="section">
+<div class="container">
+  <div class="contato-grid">
+    <div>
+      <div class="sec-kicker">Localização</div>
+      <h2 class="sec-titulo">Informações de Contato</h2>
+      <div class="contato-dados" style="margin-top:20px">
+        <div class="dado-item"><span class="d-icon">📍</span><div><strong>Endereço</strong><span>Câmara Municipal de Jaguarão<br>Rua XV de Novembro, s/nº — Centro<br>Jaguarão/RS — CEP 96300-000</span></div></div>
+        <div class="dado-item"><span class="d-icon">📞</span><div><strong>Telefone</strong><span><a href="tel:555332610000" style="color:var(--azul-3)">(53) 3261-XXXX</a></span></div></div>
+        <div class="dado-item"><span class="d-icon">✉</span><div><strong>E-mail Geral</strong><span><a href="mailto:conselho@jaguarao.rs.gov.br" style="color:var(--azul-3)">conselho@jaguarao.rs.gov.br</a></span></div></div>
+        <div class="dado-item"><span class="d-icon">✉</span><div><strong>E-mail Presidência</strong><span><a href="mailto:presidencia@conselhojaguarao.rs.gov.br" style="color:var(--azul-3)">presidencia@conselhojaguarao.rs.gov.br</a></span></div></div>
+        <div class="dado-item"><span class="d-icon">🕐</span><div><strong>Horário de Atendimento</strong><span>Segunda a Sexta<br>8h às 12h / 13h30 às 17h30</span></div></div>
+      </div>
+      <div style="margin-top:20px;background:var(--cinza-7);border-radius:var(--r-xl);padding:20px;display:flex;align-items:center;justify-content:center;min-height:200px;flex-direction:column;gap:12px;color:var(--cinza-4);font-size:.85rem;border:1px solid var(--cinza-6)">
+        <span style="font-size:2.5rem">🗺</span>
+        <span>Câmara Municipal de Jaguarão/RS</span>
+        <a href="https://maps.google.com/?q=Jaguarao,RS,Brasil" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Abrir no Google Maps</a>
+      </div>
+    </div>
+    <div class="form-contato">
+      <h3>Enviar Mensagem</h3>
+      <p class="form-sub">Respondemos em até 2 dias úteis. Para urgências, ligue.</p>
+      <form id="formContato" novalidate>
+        <div class="form-grupo"><label for="nome">Nome completo *</label><input type="text" id="nome" name="nome" placeholder="Seu nome completo" required></div>
+        <div class="form-row">
+          <div class="form-grupo"><label for="email">E-mail *</label><input type="email" id="email" name="email" placeholder="seu@email.com" required></div>
+          <div class="form-grupo"><label for="tel">Telefone</label><input type="tel" id="tel" name="telefone" placeholder="(53) 9XXXX-XXXX"></div>
+        </div>
+        <div class="form-grupo"><label for="assunto">Assunto</label>
+          <select id="assunto" name="assunto"><option value="">Selecione…</option><option>Informações Gerais</option><option>Resoluções e Deliberações</option><option>Participação Social</option><option>Imprensa</option><option>Parceria Institucional</option><option>Outros</option></select>
+        </div>
+        <div class="form-grupo"><label for="mensagem">Mensagem *</label><textarea id="mensagem" name="mensagem" placeholder="Descreva sua solicitação…" required></textarea></div>
+        <div class="form-grupo" style="display:flex;align-items:flex-start;gap:8px">
+          <input type="checkbox" id="lgpd" required style="width:auto;margin-top:3px">
+          <label for="lgpd" style="font-size:.78rem;color:var(--cinza-3);font-weight:400">Concordo com o uso dos meus dados para fins de comunicação, conforme a LGPD.</label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%">✉ Enviar Mensagem</button>
+      </form>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+  window.CMJData = { base: '../' };
+  CMJ.init();
+</script>
+</body></html>
