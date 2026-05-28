@@ -1,130 +1,49 @@
 {
   "conselheiros": [
     {
-      "nome": "Maria Ferreira",
-      "cargo": "Secretaria Municipal de Assistência Social",
+      "nome": "LEONARDO TERRA KERCHINER",
+      "cargo": "PRESIDENTE - SECRETARIA DE SAÚDE",
       "segmento": "poder-publico",
       "tipo": "titular",
-      "iniciais": "MF"
+      "email": "leonardokerchiner@gmail.com",
+      "iniciais": ""
     },
     {
-      "nome": "José da Silva",
-      "cargo": "Secretaria Municipal de Saúde",
-      "segmento": "poder-publico",
-      "tipo": "titular",
-      "iniciais": "JS"
-    },
-    {
-      "nome": "Ana Luiza Campos",
-      "cargo": "Secretaria Municipal de Educação",
-      "segmento": "poder-publico",
-      "tipo": "titular",
-      "iniciais": "AL"
-    },
-    {
-      "nome": "Roberto Pereira",
-      "cargo": "Secretaria Municipal de Habitação",
-      "segmento": "poder-publico",
-      "tipo": "titular",
-      "iniciais": "RP"
-    },
-    {
-      "nome": "Carla Mendes",
-      "cargo": "Secretaria Municipal de Meio Ambiente",
-      "segmento": "poder-publico",
-      "tipo": "titular",
-      "iniciais": "CM"
-    },
-    {
-      "nome": "Paulo Souza",
-      "cargo": "Secretaria Municipal de Finanças",
-      "segmento": "poder-publico",
-      "tipo": "titular",
-      "iniciais": "PS"
-    },
-    {
-      "nome": "Maria das Graças Oliveira",
-      "cargo": "Entidades de Assistência Social",
+      "nome": "IONE ARAÚJO CORRÊA MIRAPALHETA",
+      "cargo": "APAE",
       "segmento": "sociedade-civil",
       "tipo": "titular",
-      "iniciais": "MO"
+      "iniciais": ""
     },
     {
-      "nome": "Joana Figueiredo",
-      "cargo": "Associação de Bairros",
+      "nome": "PRISCILA AGUIAR DUTRA",
+      "cargo": "APAE",
       "segmento": "sociedade-civil",
-      "tipo": "titular",
-      "iniciais": "JF"
+      "tipo": "suplente"
     },
     {
-      "nome": "Carlos Rocha",
-      "cargo": "Sindicatos e Entidades de Classe",
+      "nome": "MARIA VIRGINIA RADUNZ GONÇALVES",
+      "cargo": "ROTARY",
       "segmento": "sociedade-civil",
-      "tipo": "titular",
-      "iniciais": "CR"
+      "tipo": "titular"
     },
     {
-      "nome": "Beatriz Silveira",
-      "cargo": "Conselho Tutelar",
+      "nome": "CARMEM CALVETE BRANCHER",
+      "cargo": "ROTARY",
       "segmento": "sociedade-civil",
-      "tipo": "titular",
-      "iniciais": "BS"
+      "tipo": "suplente"
     },
     {
-      "nome": "Gilberto Correa",
-      "cargo": "Org. Religiosas e Filantrópicas",
+      "nome": "ALCEU PAIVA",
+      "cargo": "TESOUREIRO - LEGIÃO DA CRUZ",
       "segmento": "sociedade-civil",
-      "tipo": "titular",
-      "iniciais": "GC"
+      "tipo": "titular"
     },
     {
-      "nome": "Vera Lúcia Pinto",
-      "cargo": "Movimentos Sociais e Populares",
-      "segmento": "sociedade-civil",
-      "tipo": "titular",
-      "iniciais": "VL"
-    },
-    {
-      "nome": "Lúcia Ribeiro",
-      "cargo": "SMAS",
-      "segmento": "poder-publico",
-      "tipo": "suplente",
-      "iniciais": "LR"
-    },
-    {
-      "nome": "Fernando Nunes",
-      "cargo": "SMS",
-      "segmento": "poder-publico",
-      "tipo": "suplente",
-      "iniciais": "FN"
-    },
-    {
-      "nome": "Tânia Almeida",
-      "cargo": "SME",
-      "segmento": "poder-publico",
-      "tipo": "suplente",
-      "iniciais": "TA"
-    },
-    {
-      "nome": "Sandra Melo",
-      "cargo": "Entidades Assistência",
+      "nome": "MARCOS DE OLIVEIRA TIMM",
       "segmento": "sociedade-civil",
       "tipo": "suplente",
-      "iniciais": "SM"
-    },
-    {
-      "nome": "Pedro Neto",
-      "cargo": "Associação de Bairros",
-      "segmento": "sociedade-civil",
-      "tipo": "suplente",
-      "iniciais": "PN"
-    },
-    {
-      "nome": "Ilda Cruz",
-      "cargo": "Sindicatos",
-      "segmento": "sociedade-civil",
-      "tipo": "suplente",
-      "iniciais": "IC"
+      "cargo": "LEGIÃO DA CRUZ"
     }
   ]
 }
