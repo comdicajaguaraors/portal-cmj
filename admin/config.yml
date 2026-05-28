@@ -9,7 +9,7 @@ backend:
   branch: main
   base_url: https://api.netlify.com
   auth_endpoint: auth
-  site_id: 3bc98ba2-dd4c-4e65-b465-fc012a5bfadf
+  site_id: friendly-fox-5509e9
 
 # Pasta onde imagens e PDFs são salvos
 media_folder: "uploads/imagens"
