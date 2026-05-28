@@ -19,7 +19,7 @@ public_folder: "/uploads/imagens"
 locale: "pt"
 
 # ── CONFIGURAÇÕES DO PAINEL ─────────────────────────────────
-site_url: https://comdicajaguaraors.github.io/portal-cmj
+site_url: https://friendly-fox-5509e9.netlify.app
 
 # Publicar sem necessidade de aprovação (direto no branch main)
 publish_mode: simple
