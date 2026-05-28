@@ -7,9 +7,8 @@ backend:
   name: github
   repo: comdicajaguaraors/portal-cmj
   branch: main
-  base_url: https://api.netlify.com
+  base_url: https://friendly-fox-5509e9.netlify.app
   auth_endpoint: auth
-  site_id: friendly-fox-5509e9
 
 # Pasta onde imagens e PDFs são salvos
 media_folder: "uploads/imagens"
