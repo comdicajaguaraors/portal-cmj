@@ -1,14 +1,6 @@
 {
   "conselheiros": [
     {
-      "nome": "LEONARDO TERRA KERCHINER",
-      "cargo": "PRESIDENTE - SECRETARIA DE SAÚDE",
-      "segmento": "poder-publico",
-      "tipo": "titular",
-      "email": "leonardokerchiner@gmail.com",
-      "iniciais": ""
-    },
-    {
       "nome": "IONE ARAÚJO CORRÊA MIRAPALHETA",
       "cargo": "APAE",
       "segmento": "sociedade-civil",
@@ -32,18 +24,6 @@
       "cargo": "ROTARY",
       "segmento": "sociedade-civil",
       "tipo": "suplente"
-    },
-    {
-      "nome": "ALCEU PAIVA",
-      "cargo": "TESOUREIRO - LEGIÃO DA CRUZ",
-      "segmento": "sociedade-civil",
-      "tipo": "titular"
-    },
-    {
-      "nome": "MARCOS DE OLIVEIRA TIMM",
-      "segmento": "sociedade-civil",
-      "tipo": "suplente",
-      "cargo": "LEGIÃO DA CRUZ"
     }
   ]
 }
