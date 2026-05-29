@@ -74,6 +74,29 @@
     </div>
   </div>
 </section>
+  <script>
+fetch('../data/mesa_diretora.json')
+  .then(r => r.json())
+  .then(data => {
+    const lista = Array.isArray(data) ? data : (data.membros || []);
+    if (!lista.length) return;
+    const grid = document.getElementById('mesa-diretora-grid');
+    if (!grid) return;
+    grid.innerHTML = lista.map(m => `
+      <div class="mesa-card">
+        <div class="mesa-topo">
+          <div class="mesa-foto" aria-hidden="true">👤</div>
+          <h3>${m.nome}</h3>
+          <span class="mesa-cargo">${m.cargo}</span>
+        </div>
+        <div class="mesa-body">
+          <p>${m.descricao || ''}</p>
+          <p class="seg"><strong>Segmento:</strong> ${m.segmento || ''}</p>
+          ${m.email ? `<a href="mailto:${m.email}">✉ ${m.email}</a>` : ''}
+        </div>
+      </div>`).join('');
+  }).catch(e => console.warn('mesa-diretora:', e));
+</script>
 </main>
 <div id="site-footer"></div>
 <script src="../assets/js/components.js"></script>
