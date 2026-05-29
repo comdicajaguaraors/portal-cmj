@@ -75,6 +75,38 @@
     </div>
   </div>
 </section>
+  <script>
+// Substituir cards estáticos pelos dados dinâmicos do JSON
+fetch('../data/conselheiros.json')
+  .then(r => r.json())
+  .then(data => {
+    const lista = data.conselheiros || data;
+    const pp = lista.filter(c => c.segmento === 'poder-publico');
+    const sc = lista.filter(c => c.segmento === 'sociedade-civil');
+
+    function card(c) {
+      const suplente = c.tipo === 'suplente';
+      const cor = c.segmento === 'sociedade-civil' ? 'background:linear-gradient(135deg,var(--verde-1),var(--verde-2))' : '';
+      const inic = c.iniciais || (c.nome||'').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+      return `<div class="c-card" data-categoria="${c.segmento} ${c.tipo}">
+        <div class="c-avatar ${c.segmento==='sociedade-civil'?'verde':''} ${suplente?'suplente':''}" style="${suplente?'opacity:.65':''};${cor}">${inic}</div>
+        <h4>${c.nome}</h4>
+        <div class="cargo">${c.cargo}</div>
+        <span class="tag ${c.segmento==='poder-publico'?'tag-blue':'tag-green'}" style="margin-top:8px">${suplente?'Suplente':'Titular'}</span>
+      </div>`;
+    }
+
+    const gridPP = document.getElementById('grid-poder-publico');
+    const gridSC = document.getElementById('grid-sociedade-civil');
+    if (gridPP && pp.length) gridPP.innerHTML = pp.map(card).join('');
+    if (gridSC && sc.length) gridSC.innerHTML = sc.map(card).join('');
+
+    // Atualizar contador do filtro
+    const btn = document.querySelector('[data-filtro="todos"]');
+    if (btn) btn.textContent = `Todos (${lista.length})`;
+  })
+  .catch(e => console.warn('Erro ao carregar conselheiros:', e));
+</script>
 </main>
 <div id="site-footer"></div>
 <script src="../assets/js/components.js"></script>
