@@ -75,37 +75,38 @@
     </div>
   </div>
 </section>
-  <script>
-// Substituir cards estáticos pelos dados dinâmicos do JSON
+ <script>
 fetch('../data/conselheiros.json')
   .then(r => r.json())
   .then(data => {
-    const lista = data.conselheiros || data;
-    const pp = lista.filter(c => c.segmento === 'poder-publico');
-    const sc = lista.filter(c => c.segmento === 'sociedade-civil');
+    const lista = Array.isArray(data) ? data : (data.conselheiros || []);
+    if (!lista.length) return;
+
+    function iniciais(nome) {
+      return (nome || '').split(' ').filter(w => w.length > 2)
+        .map(w => w[0]).join('').slice(0, 2).toUpperCase();
+    }
 
     function card(c) {
-      const suplente = c.tipo === 'suplente';
-      const cor = c.segmento === 'sociedade-civil' ? 'background:linear-gradient(135deg,var(--verde-1),var(--verde-2))' : '';
-      const inic = c.iniciais || (c.nome||'').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+      const sup = c.tipo === 'suplente';
+      const verde = c.segmento === 'sociedade-civil';
       return `<div class="c-card" data-categoria="${c.segmento} ${c.tipo}">
-        <div class="c-avatar ${c.segmento==='sociedade-civil'?'verde':''} ${suplente?'suplente':''}" style="${suplente?'opacity:.65':''};${cor}">${inic}</div>
+        <div class="c-avatar ${verde ? 'verde' : ''}" style="${sup ? 'opacity:.65' : ''}">${c.iniciais || iniciais(c.nome)}</div>
         <h4>${c.nome}</h4>
         <div class="cargo">${c.cargo}</div>
-        <span class="tag ${c.segmento==='poder-publico'?'tag-blue':'tag-green'}" style="margin-top:8px">${suplente?'Suplente':'Titular'}</span>
+        <span class="tag ${verde ? 'tag-green' : 'tag-blue'}" style="margin-top:8px">${sup ? 'Suplente' : 'Titular'}</span>
       </div>`;
     }
 
+    const pp = lista.filter(c => c.segmento === 'poder-publico');
+    const sc = lista.filter(c => c.segmento === 'sociedade-civil');
     const gridPP = document.getElementById('grid-poder-publico');
     const gridSC = document.getElementById('grid-sociedade-civil');
-    if (gridPP && pp.length) gridPP.innerHTML = pp.map(card).join('');
-    if (gridSC && sc.length) gridSC.innerHTML = sc.map(card).join('');
-
-    // Atualizar contador do filtro
+    if (gridPP) gridPP.innerHTML = pp.length ? pp.map(card).join('') : gridPP.innerHTML;
+    if (gridSC) gridSC.innerHTML = sc.length ? sc.map(card).join('') : gridSC.innerHTML;
     const btn = document.querySelector('[data-filtro="todos"]');
     if (btn) btn.textContent = `Todos (${lista.length})`;
-  })
-  .catch(e => console.warn('Erro ao carregar conselheiros:', e));
+  }).catch(e => console.warn('conselheiros:', e));
 </script>
 </main>
 <div id="site-footer"></div>
